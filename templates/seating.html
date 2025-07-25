@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Seats</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="seating-page">
+  <div class="seating-container">
+
+    <!-- 🎬 Movie Info -->
+    <div class="movie-header">
+      <img src="{{ url_for('static', filename=movie.image) }}" class="movie-poster" alt="Movie Poster">
+      <h2>{{ movie.title }}</h2>
+      <p>🎟️ Price: ₹{{ movie.price }}</p>
+      <p>📍 {{ theater }} | ⏰ {{ time }}</p>
+    </div>
+
+    <!-- 🪑 Seat Legend -->
+    <div class="labels">
+      <div class="label"><div class="seat"></div> Available</div>
+      <div class="label"><div class="seat selected"></div> Selected</div>
+      <div class="label"><div class="seat occupied"></div> Occupied</div>
+    </div>
+
+    <!-- 🧾 Seat Form -->
+    <form method="POST">
+      <div class="seat-grid">
+        {% for row in 'ABCDEFGHIJ' %}
+          {% for col in range(1, 13) %}
+            {% set seat = row ~ col %}
+            <div class="seat" data-seat="{{ seat }}" onclick="selectSeat(this, '{{ seat }}')">
+              {{ seat }}
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+
+      <input type="hidden" name="selected_seats" id="selectedSeats" required>
+
+      <button type="submit">Proceed to Payment</button>
+    </form>
+  </div>
+
+  <script>
+    const selectedSeats = new Set();
+
+    function selectSeat(element, seatId) {
+      if (element.classList.contains('occupied')) return;
+
+      element.classList.toggle('selected');
+
+      if (selectedSeats.has(seatId)) {
+        selectedSeats.delete(seatId);
+      } else {
+        selectedSeats.add(seatId);
+      }
+
+      document.getElementById('selectedSeats').value = Array.from(selectedSeats).join(',');
+    }
+  </script>
+</body>
+</html>

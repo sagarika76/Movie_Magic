@@ -1,0 +1,1112 @@
+/* Root Variables */
+:root {
+  --primary-color: #ff6f61;
+  --accent-color: #ffd54f;
+  --background: #0f1115;
+  --text-color: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --blur: blur(16px);
+  --border-radius: 16px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --transition: 0.3s ease;
+}
+
+/* Global Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  overflow-x: hidden;
+  height: 100%;
+}
+/* Specific Page Backgrounds */
+body.index-page {
+  background: url('/static/index_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.login-page {
+  background: url('/static/login_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.register-page {
+  background: url('/static/register_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+body.home-page {
+  background: url('/static/home_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.booking-page {
+  background: url('/static/booking_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.seating-page {
+  background: url('/static/seating_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.ticket-page {
+  background: url('/static/ticket_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+body.dasboard-page {
+  background: url('/static/dashboard_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+/* Utility */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+h1.highlight {
+  text-align: center;
+  font-size: 2.2em;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+}
+
+.centered, .btn-group {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Buttons */
+.btn, .time-btn, .nav-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.btn:hover, .time-btn:hover, .nav-btn:hover {
+  background: #e4574e;
+}
+
+.btn.cancel {
+  background: #555;
+}
+.btn.cancel:hover {
+  background: #777;
+}
+
+.btn.large {
+  width: 100%;
+  padding: 12px;
+}
+
+/* Top Navigation */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow);
+  border-radius: 0 0 16px 16px;
+}
+
+/* Auth Forms */
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background: var(--glass-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* Flash Messages */
+.flash-message {
+  background: rgba(255, 77, 77, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  color: white;
+}
+
+/* Home Page: Movie Cards */
+.movie-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.movie-card {
+  flex: 0 0 auto;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  min-width: 200px;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+}
+
+.movie-card h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Booking Page */
+.movie-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.movie-info img {
+  width: 150px;
+  border-radius: 10px;
+}
+
+.theater-card {
+  margin-bottom: 30px;
+  background: var(--glass-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow);
+}
+
+.showtimes {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Seating */
+.seat-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.seat-row {
+  display: flex;
+  gap: 8px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.seat.selected {
+  background: var(--accent-color);
+  color: black;
+  font-weight: bold;
+}
+
+.screen-curve {
+  margin-top: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--accent-color);
+  border-bottom: 6px solid var(--accent-color);
+  border-radius: 50%;
+  padding: 10px 0;
+}
+
+/* Ticket */
+.movie-poster {
+  display: block;
+  margin: auto;
+  width: 160px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+}
+
+.booking-info {
+  background: var(--glass-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow);
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.booking-info p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.total-price {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Dashboard */
+#wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: var(--glass-bg);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+  border-radius: 0 16px 16px 0;
+}
+
+.sidebar h4 {
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.nav-link {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  background: var(--accent-color);
+  color: black;
+}
+
+.content-area {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.stat-card, .teaser-card {
+  background: var(--glass-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+}
+
+/* Hamburger Menu */
+.top-right-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.hamburger {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background: var(--glass-bg);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown-menu a:hover {
+  background: var(--accent-color);
+  color: black;
+  border-radius: 8px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body.index-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('/static/images/index_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.center-box {
+  text-align: center;
+  padding: 2rem 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.top-nav {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-btn {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+body.index-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("../static/index_bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🎟️ Movie Card - Medium Image Size */
+.movie-card {
+  flex: 0 0 auto;
+  width: 260px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+}
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--accent-color);
+}
+.movie-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.seats-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 60px;
+  overflow-x: auto;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.seat {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.seat:hover {
+  background-color: #aaffaa;
+}
+
+.seat.selected {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* General reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ---------- SEATING PAGE ---------- */
+
+body.seating-page {
+  background: url('/static/images/seating_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #000; /* Fallback for slow load */
+  min-height: 100vh;
+  color: white;
+}
+
+/* Container for seating layout */
+.seating-container {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Title */
+.seating-container h2 {
+  color: #00ffcc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Seat grid */
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+/* Individual seat */
+.seat {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.seat:hover {
+  transform: scale(1.1);
+}
+
+.seat.selected {
+  background-color: #4caf50;
+}
+
+.seat.occupied {
+  background-color: #ff4d4d;
+  cursor: not-allowed;
+}
+
+/* Labels */
+.labels {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.label .seat {
+  margin-right: 5px;
+}
+
+/* Button */
+button {
+  background-color: #ff4444;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #cc0000;
+}
+/* Movie Header */
+.movie-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.movie-poster {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffc8;
+  margin-bottom: 10px;
+}
+
+/* Seat grid (A-J rows, 12 columns) */
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+
+/* Seat boxes */
+.seat {
+  width: 36px;
+  height: 36px;
+  background-color: #ccc;
+  color: black;
+  font-size: 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.seat:hover {
+  transform: scale(1.1);
+}
+
+.seat.selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+.seat.occupied {
+  background-color: #ff4d4d;
+  cursor: not-allowed;
+}
+
+/* ---------- PAYMENT PAGE ---------- */
+body.payment-page {
+  background: url('/static/payment_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  min-height: 100vh;
+}
+
+.payment-container {
+  max-width: 600px;
+  margin: 80px auto 40px auto;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.payment-container h2 {
+  color: #00ff88; /* Green text */
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.movie-poster {
+  width: 160px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.payment-details {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.payment-details p {
+  margin: 10px 0;
+}
+
+.qr-code {
+  margin: 20px 0;
+}
+
+.qr-code img {
+  width: 180px;
+  border-radius: 12px;
+}
+
+button.pay-now {
+  background-color: #00cc66;
+  color: white;
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+button.pay-now:hover {
+  background-color: #00994d;
+}
+
+body.ticket-page {
+  background: url('../static/ticket_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+
+.container.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.highlight {
+  color: #00cc66;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.movie-poster {
+  max-width: 180px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.booking-info p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.info {
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.seat-badge {
+  display: inline-block;
+  background-color: #88cc88;
+  padding: 3px 8px;
+  margin: 2px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #000;
+}
+
+.total-price {
+  font-weight: bold;
+  color: #00ff99;
+}
+
+.btn-group {
+  margin-top: 25px;
+}
+
+.btn {
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #222;
+}
+
+body.ticket-page {
+  background: url('../static/ticket_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+
+.ticket-container {
+  margin: 80px auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.ticket-heading {
+  color: #00ff99;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.movie-title {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.booking-details {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+.seat-badge {
+  display: inline-block;
+  background-color: #88cc88;
+  color: black;
+  padding: 5px 10px;
+  margin: 3px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.total-price {
+  font-weight: bold;
+  color: #ffd700;
+  font-size: 1.4em;
+  margin-top: 10px;
+}
+
+.nav-links {
+  margin-top: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+body.about-page {
+  background: url('../static/about_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  padding: 0;
+  text-align: center;
+}
+
+.about-glass {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  margin: 50px auto;
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.about-glass h1 {
+  font-size: 2.5em;
+  color: #00ffcc;
+  margin-bottom: 20px;
+}
+
+.about-glass h2 {
+  color: #ffd700;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.about-glass p.intro {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.features, .benefits, .tech-stack, .workflow {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.features li, .benefits li, .tech-stack li, .workflow li {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px 18px;
+  margin: 8px 0;
+  border-left: 5px solid #00cc99;
+  border-radius: 6px;
+  font-size: 1.05em;
+}
+
+.nav-links {
+  margin-top: 30px;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  padding: 10px 18px;
+  background-color: #00cc99;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #00997a;
+}
+
+body.services-page {
+  background: url('../static/services_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.services-container {
+  background: rgba(0, 0, 0, 0.65);
+  margin: 50px auto;
+  padding: 40px;
+  max-width: 1100px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-size: 2.8em;
+  color: #00ffd5;
+  margin-bottom: 30px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: 2px solid #00ffd5;
+  border-radius: 15px;
+  padding: 25px 20px;
+  width: 300px;
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 255, 213, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 255, 213, 0.4);
+}
+
+.service-card h3 {
+  color: #00ffd5;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  font-size: 1.05em;
+  line-height: 1.5;
+}
+
+.nav-links {
+  margin-top: 40px;
+}
+
+.nav-links .btn {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #00ffd5;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links .btn:hover {
+  background: #cc007e;
+}
+
+body.dashboard-page {
+  background: url('../static/dashboard_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+#wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px 20px;
+  border-right: 2px solid #00ffd5;
+  text-align: center;
+}
+
+.sidebar h4 {
+  color: #00ffd5;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  display: block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  margin: 10px 0;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #00ffd5;
+  color: #000;
+}
+
+/* Main Content */
+.content-area {
+  flex: 1;
+  padding: 40px;
+}
+
+.section-title {
+  font-size: 2em;
+  color: #00ffd5;
+  margin-bottom: 30px;
+}
+
+.booking-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00ffd5;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 20px rgba(0, 255, 213, 0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+.stat-card h4 {
+  color: #00ffd5;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.teaser-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #888;
+  max-width: 500px;
+  margin: 0 auto;
+  backdrop-filter: blur(4px);
+}
+
+.teaser-card h5 {
+  font-size: 1.5em;
+  color: #ffcc00;
+}
+
+.teaser-card p {
+  font-size: 1.1em;
+}
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Movie Magic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="about-page">
+  <div class="about-glass">
+    <h1>🎬 Welcome to Movie Magic</h1>
+    <p class="intro">
+      Movie Magic is your ultimate destination for booking movie tickets with ease, comfort, and a touch of magic.
+    </p>
+
+    <h2>🌟 What is Movie Magic?</h2>
+    <ul class="features">
+      <li>🎟️ <strong>Easy Ticket Booking:</strong> Choose your favorite movie and book seats instantly.</li>
+      <li>📅 <strong>Real-time Scheduling:</strong> Check live show timings at your nearest theaters.</li>
+      <li>💺 <strong>Seat Selection:</strong> Pick seats of your choice from an interactive seating layout.</li>
+      <li>🔒 <strong>Secure Payments:</strong> Multiple payment options with strong encryption and QR support.</li>
+      <li>📧 <strong>Instant Confirmation:</strong> Receive confirmation and ticket details immediately.</li>
+      <li>🧾 <strong>PDF Ticket Generation:</strong> Download and save your digital ticket.</li>
+    </ul>
+
+    <h2>🚀 Why Choose Movie Magic?</h2>
+    <ul class="benefits">
+      <li>✅ Fast and user-friendly interface.</li>
+      <li>✅ No registration hassles – easy session-based login.</li>
+      <li>✅ Real-time database for managing user bookings.</li>
+      <li>✅ Voice and face-based emotion recognition integration.</li>
+      <li>✅ Personalized dashboard to view your history.</li>
+    </ul>
+
+    <h2>📂 Technologies Used</h2>
+    <ul class="tech-stack">
+      <li>🐍 Python + Flask for backend</li>
+      <li>🎨 HTML, CSS for UI</li>
+      <li>🗄️ SQLite / DynamoDB for storage</li>
+      <li>📤 AWS SNS for email notifications</li>
+      <li>🧠 Machine Learning for emotion prediction</li>
+    </ul>
+
+    <h2>🧙‍♂️ The Magic Behind the Scenes</h2>
+    <ol class="workflow">
+      <li>User selects a movie and theater.</li>
+      <li>Seat layout is displayed dynamically.</li>
+      <li>Once seats are selected, payment screen is shown with a QR code.</li>
+      <li>Payment confirmation saves booking to database.</li>
+      <li>Ticket is generated, styled, and shown with options to download.</li>
+    </ol>
+
+    <h2>📞 Contact & Support</h2>
+    <p>Have questions, feedback, or need help?</p>
+    <p>Email us at: <a href="mailto:support@moviemagic.com">support@moviemagic.com</a></p>
+
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}">🏠 Home</a>
+      <a href="{{ url_for('dashboard') }}">📁 Dashboard</a>
+      <a href="{{ url_for('logout') }}">🔓 Logout</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎯 Our Services - Movie Magic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="services-page">
+  <div class="services-container">
+    <h1 class="title">🎯 Our Services</h1>
+    <div class="cards-container">
+
+      <div class="service-card">
+        <h3>🎬 Movie Ticket Booking</h3>
+        <p>Book latest movie tickets instantly with seat selection and payment integration.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>📱 Mobile Compatibility</h3>
+        <p>Responsive interface for smooth experience across phones, tablets and PCs.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>🔐 Secure Payment</h3>
+        <p>Fast and safe transactions via QR code-based payment gateways.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>🎭 Emotion Detection</h3>
+        <p>Get personalized suggestions based on your facial and voice emotions.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>📈 Booking Dashboard</h3>
+        <p>Track your bookings and download digital tickets at your convenience.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>📧 Email Alerts</h3>
+        <p>Receive booking alerts and tickets via email using AWS SNS.</p>
+      </div>
+
+    </div>
+
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}" class="btn">🏠 Home</a>
+      <a href="{{ url_for('dashboard') }}" class="btn">📁 Dashboard</a>
+      <a href="{{ url_for('logout') }}" class="btn">🔓 Logout</a>
+    </div>
+  </div>
+</body>
+</html>

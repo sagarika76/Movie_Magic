@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Movie Magic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="dashboard-page">
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h4>🎬 Movie Magic</h4>
+      <a href="{{ url_for('home') }}" class="nav-link">🏠 Home</a>
+      <a href="{{ url_for('logout') }}" class="nav-link">🔓 Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-area">
+      <h2 class="section-title">📋 Your Bookings</h2>
+
+      {% if bookings %}
+        <div class="booking-cards">
+          {% for booking in bookings %}
+            <div class="stat-card">
+              <h4>🎬 {{ booking.movie }}</h4>
+              <p><strong>🎟️ Seats:</strong> {{ booking.seats }}</p>
+              <p><strong>💰 Price per seat:</strong> ₹{{ '%.2f' % (booking.price / booking.seats.split(',')|length) }}</p>
+              <p><strong>🧾 Total:</strong> ₹{{ booking.price }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="teaser-card">
+          <h5>No bookings yet</h5>
+          <p>Start your cinematic journey by booking a movie!</p>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</body>
+</html>

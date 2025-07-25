@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="ticket-page">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ticket Confirmation - {{ movie.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body class="ticket-page">
+  <div class="container glass-card">
+    <h1 class="highlight">✅ Your Ticket is Confirmed!</h1>
+
+    <!-- 🎬 Movie Poster -->
+    <img class="movie-poster" src="{{ url_for('static', filename=movie.image) }}" alt="{{ movie.title }}" />
+
+    <!-- 📋 Booking Details -->
+    {% set seat_list = seats.split(',') if seats else [] %}
+    <div class="booking-info">
+      <p><span class="info">🎬 Movie:</span> {{ movie.title }}</p>
+      <p><span class="info">🎟️ Seats:</span>
+        {% for seat in seat_list %}
+          <span class="seat-badge">{{ seat }}</span>
+        {% else %}
+          None
+        {% endfor %}
+      </p>
+      <p>
+        <span class="info">💰 Total Price:</span>
+        <span class="total-price">₹{{ total_price }}</span>
+      </p>
+    </div>
+
+    <!-- 🔗 Navigation Buttons -->
+    <div class="btn-group">
+      <a href="{{ url_for('home') }}" class="btn">🏠 Home</a>
+      <a href="{{ url_for('dashboard') }}" class="btn">📁 Dashboard</a>
+      <a href="{{ url_for('logout') }}" class="btn btn-red">🔓 Logout</a>
+    </div>
+  </div>
+</body>
+</html>

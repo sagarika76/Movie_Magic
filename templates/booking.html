@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" class="booking-page">
+<head>
+  <meta charset="UTF-8" />
+  <title>Booking - {{ movie.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body class="booking-page">
+  <div class="container">
+    <h1 class="highlight">🎟️ Book Your Show</h1>
+
+    <!-- Movie Card -->
+    <div class="movie-info glass-card">
+      <img src="{{ url_for('static', filename=movie.image) }}" alt="{{ movie.title }}" class="movie-poster" />
+      <div class="movie-details">
+        <h2>{{ movie.title }}</h2>
+        <p class="price">₹{{ movie.price }}</p>
+      </div>
+    </div>
+
+    <!-- Theaters & Times -->
+    {% for theater in movie.theaters %}
+      <div class="theater-card glass-card">
+        <h3>{{ theater.name }}</h3>
+        <div class="seating">
+          {% for time in theater.times %}
+            <form method="POST" style="display:inline;">
+              <input type="hidden" name="seating" value="{{ theater.name }}|{{ time }}">
+              <button type="submit" class="btn time-btn accent">{{ time }}</button>
+            </form>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+    <!-- Back -->
+    <div class="centered">
+      <a href="{{ url_for('home') }}" class="btn cancel">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

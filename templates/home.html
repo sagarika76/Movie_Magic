@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="home-page">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Movie Magic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('dropdown-menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // Close menu when clicking outside
+    window.addEventListener('click', function(e) {
+      const menu = document.getElementById('dropdown-menu');
+      const button = document.querySelector('.hamburger');
+      if (!menu.contains(e.target) && !button.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+</head>
+<body class="home-page">
+
+  <!-- 🍔 Hamburger Dropdown -->
+  <div class="top-right-menu">
+    <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+    <div class="dropdown-menu" id="dropdown-menu">
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="highlight">🎬 Now Showing</h1>
+
+    <div class="movie-scroll-container">
+      {% for movie in movies %}
+        <div class="movie-card glass-card">
+          <img src="{{ url_for('static', filename=movie.image) }}" alt="{{ movie.title }}" class="movie-poster">
+          <h3>{{ movie.title }}</h3>
+          <a href="{{ url_for('booking', title=movie.title) }}" class="btn accent">Book Now</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</body>
+</html>
